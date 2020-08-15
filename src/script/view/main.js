@@ -18,18 +18,18 @@ const main = function () {
             const mealElement = document.createElement("div");
             mealElement.setAttribute("class", "meal");
 
-            mealElement.innerHTML = '<img class="thumb-meal" src="' + thumb + '" alt="Thumb">\n' +
-                '<div class="meal-info">\n' +
-                '<h2>' + name + '</h2>\n' +
-                '<p>' + instructions + '</p>' +
-                '</div>';
+            mealElement.innerHTML = `<img class="thumb-meal" src="${thumb}" alt="Thumb">
+                <div class="meal-info">
+                    <h2>${name}</h2>
+                    <p>${instructions}</p>
+                </div>`;
             mealListElement.appendChild(mealElement);
         })
     };
 
     const fallbackResult = function (message) {
         mealListElement.innerHTML = "";
-        mealListElement.innerHTML += '<h2 class="placeholder">' + message + '</h2>'
+        mealListElement.innerHTML += `<h2 class="placeholder">${message}</h2>`;
     };
 
     buttonSearchElement.addEventListener("click", onButtonSearchClicked);

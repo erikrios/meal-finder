@@ -11,6 +11,6 @@ DataSource.prototype.searchMeal = function (keyword) {
     if (filteredMeals.length) {
         this.onSuccess(filteredMeals);
     } else {
-        this.onFailed(keyword + " is not found");
+        this.onFailed(`${keyword} is not found`);
     }
 };
