@@ -3,7 +3,7 @@ function DataSource(onSuccess, onFailed) {
     this.onFailed = onFailed;
 }
 
-DataSource.prototype.searchMeal = keyword => {
+DataSource.prototype.searchMeal = function (keyword) {
     const filteredMeals = meals.filter(meal =>
         meal.name.toUpperCase().includes(keyword.toUpperCase()));
 
