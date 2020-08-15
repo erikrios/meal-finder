@@ -1,4 +1,4 @@
-import meals from './meals.js'
+import meals from './meals.js';
 
 class DataSource {
 
