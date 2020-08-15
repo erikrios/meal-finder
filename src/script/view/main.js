@@ -3,9 +3,13 @@ const main = () => {
     const buttonSearchElement = document.querySelector("#searchButtonElement");
     const mealListElement = document.querySelector("#mealList");
 
-    const onButtonSearchClicked = () => {
-        const dataSource = new DataSource(renderResult, fallbackResult);
-        dataSource.searchMeal(searchElement.value);
+    const onButtonSearchClicked = async () => {
+        try {
+            const result = await DataSource.searchMeal(searchElement.value);
+            renderResult(result);
+        } catch (message) {
+            fallbackResult(message);
+        }
     };
 
     const renderResult = results => {
