@@ -21,15 +21,21 @@ class AppBar extends HTMLElement {
                 display: block;
                 padding: 16px;
                 width: 100%;
-                background-color: cornflowerblue;
+                background-color: green;
                 color: white;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             }
             h2 {
-                padding: 16px;
+                text-align: center;
+                padding: 20px;
+            }
+            h4 {
+                text-align: center;
+                padding-bottom: 20px;
             }
         </style>
-        <h2>Meal Finder`;
+        <h2>Meal Finder</h2>
+        <h4>Temukan Makanan Favoritmu!`;
     }
 }
 

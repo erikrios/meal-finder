@@ -21,7 +21,7 @@ class MealList extends HTMLElement {
         })
     }
 
-    remderError(message) {
+    renderError(message) {
         mealListElement.shadowDOM.innerHTML = `
         <style>
             .placeholder {
