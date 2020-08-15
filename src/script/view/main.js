@@ -1,21 +1,21 @@
-var main = function () {
-    var searchElement = document.querySelector("#searchElement");
-    var buttonSearchElement = document.querySelector("#searchButtonElement");
-    var mealListElement = document.querySelector("#mealList");
+const main = function () {
+    const searchElement = document.querySelector("#searchElement");
+    const buttonSearchElement = document.querySelector("#searchButtonElement");
+    const mealListElement = document.querySelector("#mealList");
 
-    var onButtonSearchClicked = function () {
-        var dataSource = new DataSource(renderResult, fallbackResult);
+    const onButtonSearchClicked = function () {
+        const dataSource = new DataSource(renderResult, fallbackResult);
         dataSource.searchMeal(searchElement.value);
     };
 
-    var renderResult = function (results) {
+    const renderResult = function (results) {
         mealListElement.innerHTML = "";
         results.forEach(function (meal) {
-            var name = meal.name;
-            var thumb = meal.thumb;
-            var instructions = meal.instructions;
+            const name = meal.name;
+            const thumb = meal.thumb;
+            const instructions = meal.instructions;
 
-            var mealElement = document.createElement("div");
+            const mealElement = document.createElement("div");
             mealElement.setAttribute("class", "meal");
 
             mealElement.innerHTML = '<img class="thumb-meal" src="' + thumb + '" alt="Thumb">\n' +
@@ -27,7 +27,7 @@ var main = function () {
         })
     };
 
-    var fallbackResult = function (message) {
+    const fallbackResult = function (message) {
         mealListElement.innerHTML = "";
         mealListElement.innerHTML += '<h2 class="placeholder">' + message + '</h2>'
     };

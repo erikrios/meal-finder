@@ -1,4 +1,4 @@
-var meals = [
+const meals = [
     {
         name: "Corba",
         category: "Side",
