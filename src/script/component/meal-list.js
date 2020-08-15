@@ -1,23 +1,39 @@
 import './meal-item.js';
 
 class MealList extends HTMLElement {
+
+    constructor() {
+        super();
+        this.shadowDOM = this.attachShadow({ mode: "open" });
+    }
+
     set meals(meals) {
         this._meals = meals;
         this.render();
     }
 
     render() {
-        this.innerHTML = "";
+        this.shadowDOM.innerHTML = "";
         this._meals.forEach(meal => {
             const mealItemElement = document.createElement("meal-item");
             mealItemElement.meal = meal;
-            this.appendChild(mealItemElement);
+            this.shadowDOM.appendChild(mealItemElement);
         })
     }
 
     remderError(message) {
-        mealListElement.innerHTML = "";
-        mealListElement.innerHTML += `<h2 class="placeholder">${message}</h2>`;
+        mealListElement.shadowDOM.innerHTML = `
+        <style>
+            .placeholder {
+                font-weight: lighter;
+                color: rgba(0,0,0,0.5);
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        </style>`;
+        mealListElement.shadowDOM.innerHTML += `<h2 class="placeholder">${message}</h2>`;
     }
 }
 
