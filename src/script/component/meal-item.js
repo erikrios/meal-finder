@@ -50,10 +50,10 @@ class MealItem extends HTMLElement {
                     -webkit-line-clamp: 10; /* number of lines to show */
                 }
             </style>
-            <img class="thumb-meal" src="${this._meal.thumb}" alt="Thumb">
+            <img class="thumb-meal" src="${this._meal.strMealThumb}" alt="Thumb">
             <div class="meal-info">
-                <h2>${this._meal.name}</h2>
-                <p>${this._meal.instructions}</p>
+                <h2>${this._meal.strMeal}</h2>
+                <p>${this._meal.strInstructions}</p>
             </div>`;
     }
 }
