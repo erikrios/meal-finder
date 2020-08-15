@@ -1,8 +1,8 @@
+import '../component/search-bar.js';
 import DataSource from '../data/data-source.js';
 
 const main = () => {
-    const searchElement = document.querySelector("#searchElement");
-    const buttonSearchElement = document.querySelector("#searchButtonElement");
+    const searchElement = document.querySelector("search-bar");
     const mealListElement = document.querySelector("#mealList");
 
     const onButtonSearchClicked = async () => {
@@ -16,13 +16,13 @@ const main = () => {
 
     const renderResult = results => {
         mealListElement.innerHTML = "";
-        results.forEach(function (meal) {
+        results.forEach(meal => {
             const { name, thumb, instructions } = meal;
-
             const mealElement = document.createElement("div");
             mealElement.setAttribute("class", "meal");
 
-            mealElement.innerHTML = `<img class="thumb-meal" src="${thumb}" alt="Thumb">
+            mealElement.innerHTML = `
+            <img class="thumb-meal" src="${thumb}" alt="Thumb">
                 <div class="meal-info">
                     <h2>${name}</h2>
                     <p>${instructions}</p>
@@ -36,7 +36,7 @@ const main = () => {
         mealListElement.innerHTML += `<h2 class="placeholder">${message}</h2>`;
     };
 
-    buttonSearchElement.addEventListener("click", onButtonSearchClicked);
+    searchElement.clickEvent = onButtonSearchClicked;
 };
 
 export default main;
