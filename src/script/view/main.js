@@ -11,9 +11,7 @@ const main = function () {
     const renderResult = function (results) {
         mealListElement.innerHTML = "";
         results.forEach(function (meal) {
-            const name = meal.name;
-            const thumb = meal.thumb;
-            const instructions = meal.instructions;
+            const { name, thumb, instructions } = meal;
 
             const mealElement = document.createElement("div");
             mealElement.setAttribute("class", "meal");
