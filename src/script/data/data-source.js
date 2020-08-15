@@ -3,10 +3,9 @@ function DataSource(onSuccess, onFailed) {
     this.onFailed = onFailed;
 }
 
-DataSource.prototype.searchMeal = function (keyword) {
-    const filteredMeals = meals.filter(function (meal) {
-        return meal.name.toUpperCase().includes(keyword.toUpperCase());
-    });
+DataSource.prototype.searchMeal = keyword => {
+    const filteredMeals = meals.filter(meal =>
+        meal.name.toUpperCase().includes(keyword.toUpperCase()));
 
     if (filteredMeals.length) {
         this.onSuccess(filteredMeals);
