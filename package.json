@@ -1,0 +1,19 @@
+{
+  "name": "mealfinder",
+  "version": "1.0.0",
+  "description": "\"Simple Web Project to Find Meal\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikrios/meal-finder.git"
+  },
+  "author": "Erik Rio Setiawan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikrios/meal-finder/issues"
+  },
+  "homepage": "https://github.com/erikrios/meal-finder#readme"
+}
